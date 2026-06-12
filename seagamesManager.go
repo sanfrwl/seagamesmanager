@@ -181,14 +181,22 @@ func ubahDataMedali(N *daftarNegara, nama string, index int) {
 }
 
 // Fungsi untuk menghapus negara dari daftar
+// Fungsi untuk menghapus negara dari daftar
 func hapusNegara(N *daftarNegara, nama string) {
-	var index int = cariNegaraIndex(*N, nama)
-	var i int = index
+	// 1. Deklarasi variabel tanpa langsung diisi fungsi pencarian
+	var index int
+	var i int
 
+	// 2. Minta input user terlebih dahulu
 	fmt.Println("Masukkan nama negara yang ingin dihapus:")
 	fmt.Print("> ")
 	fmt.Scan(&nama)
 
+	// 3. BARU lakukan pencarian index setelah 'nama' terisi
+	index = cariNegaraIndex(*N, nama)
+	i = index
+
+	// 4. Lanjut ke proses penghapusan
 	if index >= 0 {
 		for i < jumlahNegara-1 {
 			N[i] = N[i+1]
